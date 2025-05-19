@@ -1,0 +1,128 @@
+.steps-container{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.stpes-list{
+    list-style: none;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.step{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+.step:not(:nth-last-child(1))::after{
+    content: "";
+    border: 1px solid #eee;
+    width: 70%;
+    position: absolute;
+    right: -230px;
+}
+
+.number{
+    background-color: #eee;
+    width: 40px;
+    height: 40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    margin-right:15px ;
+}
+.step-content h3{
+    margin: 0;
+    font-size: 16px
+}
+.step-content p{
+    margin: 0;
+    font-size: 16px
+}
+.step.active{
+    .number{
+        background: blue ;
+        color:#fff;
+    }
+    .step-content{ 
+        color:blue ;
+    }
+}
+.step.active::after{
+    border-color: blue;
+}
+.step.complete{
+    .number{
+        background: green;
+        color:#fff;
+    }
+    .step-content{ 
+        color:green;
+    }
+}
+.step.complete::after{
+    border-color: green;
+}
+.step.skip{
+    .number{
+        background: orange;
+        color:#fff;
+    }
+    .step-content{ 
+        color:orange;
+    }
+}
+.step.skip::after{
+    border-color: orange;
+}
+.step.error{
+    .number{
+        background: red;
+        color:#fff;
+    }
+    .step-content{ 
+        color:red;
+    }
+}
+.step.error::after{
+    border-color: red;
+}
+
+button{
+    padding: 10px 20px;
+    margin :20px;
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+button.active:hover{
+    background-color: blue;
+    color: white;
+}
+button.complete:hover{
+    background-color: green;
+    color: white;
+}
+button.skip:hover{
+    background-color: orange;
+    color: white;
+}
+button.error:hover{
+    background-color: red;
+    color: white;
+}
